@@ -12,8 +12,11 @@ c = a - b
 print(c)
 # %%
 
-#plus
+#plus with two vectors
 d = a + b
+d
+#plus in the own vector
+d = a.sum()
 d
 
 # %%
@@ -51,10 +54,12 @@ a @ b
 
 # %%
 
+from numpy.random import default_rng
 #+= and -=
 #OBS: the method "default_rng" make a limite that random values can reach
 a = np.ones((2,3),dtype=int)
-b = np.random.random((2,3))
+rng=default_rng()
+b = rng.random()
 
 a*=3
 print(a)
@@ -68,4 +73,16 @@ print(b)
 a.dtype = float
 a += b
 print(a)
+# %%
+
+#methods statistics
+print(a.max())
+print(a.min())
+print(a.std())
+print(a.mean())
+
+#OBS:generate random values
+rng.integers(low=10,high=100,size=5)
+rng.standard_normal(10)
+
 # %%
